@@ -7,4 +7,5 @@ do
     exit 0
 done
 
+echo "NONE"
 exit 1
