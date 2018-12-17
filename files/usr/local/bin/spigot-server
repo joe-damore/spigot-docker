@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 
 case $1 in
-    "bootstrap")
-        echo "Bootstrap"
-    ;;
 
     "start")
         echo "Start"
+        sleep 30
     ;;
 
     "stop")
@@ -17,3 +15,5 @@ case $1 in
         echo "Unrecognized command"
     ;;
 esac
+
+exit 0
