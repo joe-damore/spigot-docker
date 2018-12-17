@@ -3,6 +3,10 @@ FROM alpine:3.8
 # Copy files
 COPY files /
 
+# Set environment variables
+ENV SPIGOT_HOME=/spigot \
+    SPIGOT_VER=latest
+
 # Install dependencies
 RUN apk upgrade --update && \
     apk add --no-cache wget curl ca-certificates openssl git && \
