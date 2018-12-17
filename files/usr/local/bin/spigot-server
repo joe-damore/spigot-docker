@@ -9,6 +9,8 @@ function bootstrap {
 case $1 in
 
     "start")
+        install_status = $(/bin/bash /usr/local/spigot/spigot_version.sh)
+
         if [ "$(bootstrap)" = "0" ]
         then
             numseconds=$(/bin/bash /usr/local/spigot/spigot_start.sh)
