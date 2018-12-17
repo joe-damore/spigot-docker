@@ -8,7 +8,7 @@ COPY files /
 RUN apk add --no-cache wget git
 
 # Add user
-RUN adduser -D -h /minecraft minecraft
+RUN adduser -D -h /spigot spigot
 
 # Expose Minecraft server port
 EXPOSE 25565
