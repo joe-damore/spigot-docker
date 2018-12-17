@@ -1,0 +1,11 @@
+[Unit]
+Description=Spigot Minecraft Server
+
+[Service]
+Restart=always
+ExecStartPre=/usr/local/bin/spigotctl bootstrap
+ExecStart=/usr/local/bin/spigotctl start
+ExecStop=/usr/local/bin/spigotctl stop
+
+[Install]
+WantedBy=default.target
