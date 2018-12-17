@@ -10,7 +10,7 @@ case $1 in
 
     "start")
         /bin/bash /usr/local/spigot/spigot_version.sh
-        install_status = $(/bin/bash /usr/local/spigot/spigot_version.sh)
+        install_status=$(/bin/bash /usr/local/spigot/spigot_version.sh)
 
         if [ "$(bootstrap)" = "0" ]
         then
