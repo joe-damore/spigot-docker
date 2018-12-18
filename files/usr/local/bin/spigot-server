@@ -20,6 +20,7 @@ case $1 in
 
         echo "3..."
         install_status=$(/bin/bash /usr/local/spigot/spigot_version.sh)
+        echo "$install_status"
 
         if [ "$(bootstrap)" = "0" ]
         then
