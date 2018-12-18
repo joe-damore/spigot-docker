@@ -12,10 +12,12 @@ fi
 spigot_file=$(find "$SPIGOT_HOME" -maxdepth 1 -iname 'spigot-*' -print)
 if [ -n "$spigot_file" ]
 then
-    version="$spigot_file"
-    if [[ "$version" =~ \\"$SPIGOT_HOME"\/spigot-(*.).jar ]]
+    version=${"$spigot_file"#"$SPIGOT_HOME"/spigot-}
+    version=${$version%.jar}
+
+    if [ -n "$version" ]
     then
-        echo "${BASH_REMATCH[1]}"
+        echo "$version"
         exit 0
     fi
 fi
