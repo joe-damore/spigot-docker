@@ -18,6 +18,9 @@ case $1 in
         echo "2..."
         echo "$(/bin/bash /usr/local/spigot/spigot_version.sh)"
 
+        echo "Creating file"
+        touch "/spigot/spigot-1.2.3.jar"
+
         echo "3..."
         install_status=$(/bin/bash /usr/local/spigot/spigot_version.sh)
         echo "$install_status"

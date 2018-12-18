@@ -1,12 +1,15 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Echo the current installed Spigot version, or "NONE" if not installed
 
-spigot_file=$(find "$SPIGOT_HOME"/spigot -maxdepth 1 -iname 'spigot-*' -print -quit)
+spigot_file=$(find "$SPIGOT_HOME"/spigot -maxdepth 1 -iname 'spigot-*' -print)
 if [ -n "$spigot_file" ]
 then
-    echo "$spigot_file"
-    exit 0
+    if [ $version =~ \\"$SPIGOT_HOME"\/spigot-(*.).jar ]
+    then
+        echo "$version"
+        exit 0
+    fi
 fi
 
 echo "NONE"
