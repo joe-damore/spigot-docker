@@ -23,8 +23,10 @@ function configure_git_crlf {
 # Downloads the Spigot build tools to /spigot_build
 function download_build_tools {
     # Latest buildtools URL comes from https://www.spigotmc.org/wiki/buildtools/
+    build_tools_url="https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar"
+
     echo "Downloading BuildTools.jar..."
-    wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar -O /spigot_build/BuildTools.jar
+    wget "$build_tools_url" -O /spigot_build/BuildTools.jar --rev "$SPIGOT_VER"
     echo "Done!"
 }
 
