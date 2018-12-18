@@ -12,6 +12,9 @@ case $1 in
         echo "Checking Spigot installation status..."
         spigot_version=$(/bin/bash /usr/local/spigot/spigot_version.sh)
 
+        echo "Spigot version: "
+        echo "$spigot_version"
+
         if [ "$(spigot_version)" = "NONE" ]
         then
             echo "Spigot is not installed. Installing now..."
