@@ -9,22 +9,16 @@ function bootstrap {
 case $1 in
 
     "start")
+        echo "Checking Spigot installation status..."
+        spigot_version=$(/bin/bash /usr/local/spigot/spigot_version.sh)
+
+        if [ "$(spigot_version)" = "NONE" ]
+        then
+            echo "Spigot is not installed. Installing now..."
+            /bin/bash /usr/local/spigot/spigot_install.sh
+        fi
+
         echo "Starting Spigot server..."
-
-        echo "1..."
-
-        /bin/bash /usr/local/spigot/spigot_version.sh
-
-        echo "2..."
-        echo "$(/bin/bash /usr/local/spigot/spigot_version.sh)"
-
-        echo "Creating file"
-        touch "/spigot/spigot-1.2.3.jar"
-
-        echo "3..."
-        install_status=$(/bin/bash /usr/local/spigot/spigot_version.sh)
-        echo "$install_status"
-
         if [ "$(bootstrap)" = "0" ]
         then
             echo "Waiting!"
