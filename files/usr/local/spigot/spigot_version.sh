@@ -6,7 +6,7 @@
 if [ ! -d "$SPIGOT_HOME" ]
 then
     # Create home directory if it does not.
-    mkdir "$SPIGOT_HOME"
+    mkdir -p "$SPIGOT_HOME"
 fi
 
 # Find any file in $SPIGOT_HOME whose filename begins with "spigot-"
