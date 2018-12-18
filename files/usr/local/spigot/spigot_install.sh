@@ -5,10 +5,14 @@ cd "$SPIGOT_HOME" || exit 1
 # Creates the /spigot_build directory if it does
 # not already exist
 function prepare_build_directory {
+    echo "Preparing build directory..."
     if [ ! -d /spigot_build ]
     then
         mkdir -p /spigot_build
     fi
+    echo "Done!"
+
+    exit 0
 }
 
 # Unset git core.autocrlf property, as per Spigot's build documentation
