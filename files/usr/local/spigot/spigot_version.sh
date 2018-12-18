@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # Echo the current installed Spigot version, or "NONE" if not installed
 
