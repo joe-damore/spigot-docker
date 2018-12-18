@@ -16,7 +16,7 @@ function prepare_build_directory {
 # Unset git core.autocrlf property, as per Spigot's build documentation
 function configure_git_crlf {
     echo "Configuring git..."
-    # git config --global --unset core.autocrlf
+    git config --global --unset core.autocrlf
     echo "Done!"
 }
 
