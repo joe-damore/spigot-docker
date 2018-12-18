@@ -16,6 +16,7 @@ case $1 in
         then
             echo "Spigot is not installed. Installing now..."
             /bin/bash /usr/local/spigot/spigot_install.sh
+            wait
 
             # Bail if installation failed.
             if [ "$?" -gt "0" ]
