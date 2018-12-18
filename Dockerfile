@@ -5,6 +5,7 @@ COPY files /
 
 # Set environment variables
 ENV SPIGOT_HOME=/spigot \
+    SPIGOT_WORLD=/spigot_world \
     SPIGOT_VER=latest
 
 # Install dependencies
