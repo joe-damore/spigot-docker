@@ -15,9 +15,11 @@ case $1 in
         if [ "$spigot_version" = "NONE" ]
         then
             echo "Spigot is not installed. Installing now..."
+            /bin/bash /usr/local/spigot/spigot_install.sh
+            wait
 
             # Bail if installation failed.
-            if ! /bin/bash /usr/local/spigot/spigot_install.sh
+            if [ "$?" -gt "0" ]
             then
                 echo "Unable to start Spigot: Spigot installation failed."
                 exit 1
