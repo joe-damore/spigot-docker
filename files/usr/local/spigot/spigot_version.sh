@@ -5,7 +5,14 @@ echo "Spigot version"
 
 for f in "$SPIGOT_HOME"/spigot-*;
 do
-    [ -e "$f" ] && echo "$f";
+    echo "Found"
+    echo "$f"
+
+    if [ -e "$f" ]
+    then
+        echo "BINGO!"
+        echo "$f"
+    fi
     exit 0
 done
 
