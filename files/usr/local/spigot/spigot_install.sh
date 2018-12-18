@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd "$SPIGOT_HOME"
+cd "$SPIGOT_HOME" || exit 1
 
 function download_build_tools {
 
@@ -13,14 +13,16 @@ function download_build_tools {
     # Latest buildtools URL comes from https://www.spigotmc.org/wiki/buildtools/
     wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar -O /spigot_build/BuildTools.jar
 
-    cd /spigot_build
+    cd /spigot_build || exit 2
     java -Xmx512M -jar BuildTools.jar
 
     mv /spigot_build/spigot-*.jar "$SPIGOT_HOME"
+
+    exit 0
 }
 
 function delete_build_tools {
-
+    exit 0
 }
 
 echo "Downloading and building..."
