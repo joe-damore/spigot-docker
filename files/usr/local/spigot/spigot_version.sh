@@ -12,8 +12,8 @@ fi
 spigot_file=$(find "$SPIGOT_HOME" -maxdepth 1 -iname 'spigot-*' -print)
 if [ -n "$spigot_file" ]
 then
-    version=${"$spigot_file"#"$SPIGOT_HOME"/spigot-}
-    version=${$version%.jar}
+    version=${spigot_file#"$SPIGOT_HOME"/spigot-}
+    version=${version%.jar}
 
     if [ -n "$version" ]
     then
