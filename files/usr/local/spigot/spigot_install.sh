@@ -14,7 +14,7 @@ function download_build_tools {
     wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar -O /spigot_build/BuildTools.jar
 
     cd /spigot_build
-    java -jar BuildTools.jar
+    java -Xmx512M -jar BuildTools.jar
 
     mv /spigot_build/spigot-*.jar "$SPIGOT_HOME"
 }
