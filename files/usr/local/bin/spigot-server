@@ -23,15 +23,14 @@ case $1 in
         fi
 
         echo "Starting Spigot server..."
-        if [ "$(bootstrap)" = "0" ]
+        if ! /bin/bash /usr/local/spigot_start.sh
         then
-            echo "Waiting!"
-            numseconds=$(/bin/bash /usr/local/spigot/spigot_start.sh)
-            wait
-            sleep "$numseconds"
-            echo "Done!"
-            exit $?
+            echo "Failed to start Spigot server."
+            exit 1
         fi
+
+        echo "Spigot server has stopped."
+        exit 0
     ;;
 
     "stop")
