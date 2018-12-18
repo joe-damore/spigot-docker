@@ -9,14 +9,25 @@ function bootstrap {
 case $1 in
 
     "start")
+        echo "Starting Spigot server..."
+
+        echo "1..."
+
         /bin/bash /usr/local/spigot/spigot_version.sh
+
+        echo "2..."
+        echo "$(/bin/bash /usr/local/spigot/spigot_version.sh)"
+
+        echo "3..."
         install_status=$(/bin/bash /usr/local/spigot/spigot_version.sh)
 
         if [ "$(bootstrap)" = "0" ]
         then
+            echo "Waiting!"
             numseconds=$(/bin/bash /usr/local/spigot/spigot_start.sh)
             wait
             sleep "$numseconds"
+            echo "Done!"
             exit $?
         fi
     ;;
