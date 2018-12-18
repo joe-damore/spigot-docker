@@ -20,7 +20,7 @@ case $1 in
             # Bail if installation failed.
             if [ "$?" -gt "0" ]
             then
-                echo "Unable to start Spigot: Failed to run Spigot installation"
+                echo "Unable to start Spigot: Spigot installation failed."
                 exit 1
             fi
         fi
