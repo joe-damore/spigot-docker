@@ -13,3 +13,6 @@ fi
 spigot_jar="spigot-$spigot_version.jar"
 
 java -Xms1G -Xmx2G -XX:+UseConcMarkSweepGC -jar "$spigot_jar"
+wait
+
+exit 0
