@@ -10,9 +10,12 @@ case $1 in
         then
             echo "Spigot is not installed. Installing now..."
 
-            # Bail if installation failed.
-            if ! /bin/bash /usr/local/spigot/spigot_install.sh
+            if /bin/bash /usr/local/spigot/spigot_install.sh
             then
+                # Configure EULA if installation succeeded
+                /bin/bash /usr/local/spigot/spigot_eula.sh set "$SPIGOT_EULA"
+            else
+                # Bail if installation failed
                 echo "Unable to start Spigot: Spigot installation failed."
                 exit 1
             fi
