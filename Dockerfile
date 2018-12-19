@@ -7,7 +7,8 @@ COPY files /
 ENV SPIGOT_HOME=/spigot \
     SPIGOT_WORLD=/spigot_world \
     SPIGOT_CONFIG=/spigot_config \
-    SPIGOT_VER=latest
+    SPIGOT_VER=latest \
+    SPIGOT_EULA=false
 
 # Install dependencies
 RUN apk upgrade --update && \
