@@ -16,13 +16,10 @@ case $1 in
                 echo "Unable to start Spigot: Spigot installation failed."
                 exit 1
             fi
-
-            # Output Spigot installation version
-            spigot_version=$(/bin/bash /usr/local/spigot/spigot_version.sh)
-            echo "Installed Spigot $spigot_version"
         fi
 
-        echo "Starting Spigot server..."
+        spigot_version=$(/bin/bash /usr/local/spigot/spigot_version.sh)
+        echo "Starting Spigot server $spigot_version..."
         if ! /bin/bash /usr/local/spigot/spigot_start.sh
         then
             echo "Failed to start Spigot server."
@@ -30,6 +27,8 @@ case $1 in
         fi
 
         echo "Spigot server has stopped."
+        echo "Sleeping for 2 minutes."
+        sleep 120
         exit 0
     ;;
 
