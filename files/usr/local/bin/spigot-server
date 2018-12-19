@@ -23,7 +23,7 @@ case $1 in
         fi
 
         echo "Starting Spigot server..."
-        if ! /bin/bash /usr/local/spigot_start.sh
+        if ! /bin/bash /usr/local/spigot/spigot_start.sh
         then
             echo "Failed to start Spigot server."
             exit 1
