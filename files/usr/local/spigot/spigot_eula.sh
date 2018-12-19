@@ -91,16 +91,6 @@ case $1 in
         exit 0
     ;;
 
-    "exists")
-        if eula_exists
-        then
-            echo "yes"
-        else
-            echo "no"
-        fi
-        exit 0
-    ;;
-
     *)
         echo "Unrecognized command"
     ;;
