@@ -30,8 +30,6 @@ case $1 in
         fi
 
         echo "Spigot server has stopped."
-        echo "Sleeping for 2 minutes."
-        sleep 120
         exit 0
     ;;
 
