@@ -26,7 +26,7 @@ function download_build_tools {
     build_tools_url="https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar"
 
     echo "Downloading BuildTools.jar..."
-    wget "$build_tools_url" -O /spigot_build/BuildTools.jar --rev "$SPIGOT_VER"
+    wget "$build_tools_url" -O /spigot_build/BuildTools.jar
     echo "Done!"
 }
 
@@ -34,7 +34,7 @@ function download_build_tools {
 function execute_build_tools {
     echo "Running BuildTools.jar..."
     cd /spigot_build || exit 2
-    java -Xmx1024m -jar BuildTools.jar
+    java -Xmx1024m -jar BuildTools.jar --rev "$SPIGOT_VER"
     echo "Done!"
 }
 
