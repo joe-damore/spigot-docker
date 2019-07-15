@@ -34,8 +34,16 @@ function download_build_tools {
 function execute_build_tools {
     echo "Running BuildTools.jar..."
     cd /spigot_build || exit 2
-    java -Xmx1024m -jar BuildTools.jar --rev "$SPIGOT_VER"
+    java -Xmx1024m -jar BuildTools.jar --rev "$SPIGOT_VER" || true
     echo "Done!"
+}
+
+# Determine if spigot built successfully
+function build_status {
+    if compgen -G "/spigot_build/spigot*.jar" > /dev/null; then
+        return 0
+    fi
+    return 1
 }
 
 # Moves built Spigot jar to $SPIGOT_HOME
@@ -56,7 +64,12 @@ prepare_build_directory
 configure_git_crlf
 download_build_tools
 execute_build_tools
-move_spigot
-delete_build_directory
+if build_status
+then
+    move_spigot
+    delete_build_directory
+    exit 0
+fi
 
-exit 0
+delete_build_directory
+exit 1
